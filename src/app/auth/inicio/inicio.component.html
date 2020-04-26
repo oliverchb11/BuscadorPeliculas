@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div>
+    <h1 class="text-center">Bienvenido</h1>
+    <h5 class="text-center mt-4" for="">
+      Busca tu pelicula o serie favorita añadela, calificala por tu gusto y mira
+      en que plataforma de Striming esta
+    </h5>
+    <input
+      type="text"
+      id="buscador"
+      name="filterPost"
+      class="form-control mt-4"
+      placeholder="Buscar..."
+      (input)="BuscarClientes($event)"
+      [(ngModel)]="filterPost"
+    />
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row mt-4">
+    <div
+      class="col col-sm-4"
+      *ngFor="let pelicula of nombrePelicula | pipesImg: filterPost"
+    >
+      <h4>Pelicula:</h4>
+      <h4 for="">{{ pelicula.original_title }}</h4>
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ pelicula.poster_path }}"
+        alt=""
+        id="img"
+        height="280"
+        width="280"
+      />
+      <div class="form-group" id="botones">
+        <button id="b1" class="btn btn-primary">
+          Agregar Pelicula
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row mt-4">
+    <div class="col col-sm-4" *ngFor="let tv of nombreTv | series: filterPost">
+      <h4>Serie:</h4>
+      <h4 for="">{{ tv.original_name }}</h4>
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ tv.poster_path }}"
+        alt=""
+        id="img"
+        height="280"
+        width="280"
+      />
+      <div class="form-group" id="botones">
+        <button id="b1" class="btn btn-primary">
+          Agregar Serie
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

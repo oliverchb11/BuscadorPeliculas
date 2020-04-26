@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Formularios -->
+    <div class="contenedor-formularios">
+      <!-- Links de los formularios -->
+      <ul class="contenedor-tabs">
+        <li class="tab tab-segunda">
+          <a href="">Iniciar Sesión</a>
+        </li>
+        <li class="tab tab-primera active">
+          <a routerLink="/app-register">Registrarse</a>
+        </li>
+      </ul>
+      <!-- Contenido de los Formularios -->
+      <div class="contenido-tab">
+        <h1>Registrarse</h1>
+        <form [formGroup]="formularioRegistro">
+          <div class="fila-arriba">
+            <div class="contenedor-input">
+              <input
+                type="text"
+                placeholder="Nombre *"
+                formControlName="nombre"
+              />
+            </div>
+
+            <div class="contenedor-input">
+              <input
+                type="text"
+                placeholder="Apellido *"
+                formControlName="apellido"
+              />
+            </div>
+          </div>
+          <div class="contenedor-input">
+            <input
+              type="text"
+              placeholder="Usuario *"
+              formControlName="usuario"
+            />
+          </div>
+          <div class="contenedor-input">
+            <input type="email" placeholder="Email *" formControlName="email" />
+          </div>
+          <div class="contenedor-input">
+            <input
+              type="password"
+              placeholder="Password"
+              formControlName="password"
+            />
+          </div>
+
+          <div class="contenedor-input">
+            <input
+              type="password"
+              placeholder="Repetir Contraseña *"
+              formControlName="confirmPW"
+            />
+          </div>
+
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Registrarse"
+            [disabled]="formularioRegistro.invalid"
+          />
+        </form>
+      </div>
+    </div>
+
+    <script></script>
+  </body>
+</html>
