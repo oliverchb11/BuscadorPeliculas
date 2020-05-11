@@ -1,5 +1,5 @@
 # Frontend
-
+Proyecto de materia final pagina de buscador de peliculas Consumiendo API y predecir la calificacion de la pelicula
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.7.
 
 ## Development server
